@@ -2,10 +2,27 @@ import { PATHS } from "@/routes/paths"
 import { NavigationWrapper } from "./styles/NavigationWrapper"
 import { StyledLink } from "./styles/StyledLink"
 
-const stateManagementList = [
-  PATHS.STATE_MANAGEMENT.REDUX,
-  PATHS.STATE_MANAGEMENT.MOBX,
-  PATHS.STATE_MANAGEMENT.REACT_QUERY
+type StateManagementListType = {
+  path: string
+  children?: {
+    pathChild: string
+  }[]
+}[]
+
+const stateManagementList: StateManagementListType = [
+  {
+    path: PATHS.STATE_MANAGEMENT.REDUX.INDEX,
+    children: [
+      {
+        pathChild: PATHS.STATE_MANAGEMENT.REDUX.FULL
+      },
+      {
+        pathChild: PATHS.STATE_MANAGEMENT.REDUX.TOOLKIT
+      }
+    ]
+  },
+  { path: PATHS.STATE_MANAGEMENT.MOBX },
+  { path: PATHS.STATE_MANAGEMENT.REACT_QUERY }
 ]
 
 const componentsUI = [PATHS.COMPONENT_UI]
@@ -16,11 +33,32 @@ export const Navigation = () => {
       <h2>State management</h2>
       <nav>
         <ul>
-          {stateManagementList.map((path) => (
-            <li key={path}>
-              <StyledLink to={path}>{path}</StyledLink>
-            </li>
-          ))}
+          {stateManagementList.map(({ path, children }) => {
+            if (children) {
+              return (
+                <li key={path}>
+                  <StyledLink to={path}>{path}</StyledLink>
+                  <ul>
+                    {children.map(({ pathChild }) => {
+                      return (
+                        <li key={pathChild}>
+                          <StyledLink to={`/${path}/${pathChild}`}>
+                            {pathChild}
+                          </StyledLink>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </li>
+              )
+            }
+
+            return (
+              <li key={path}>
+                <StyledLink to={path}>{path}</StyledLink>
+              </li>
+            )
+          })}
         </ul>
       </nav>
 

@@ -1,10 +1,11 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
-import "./index.css"
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { INDEX_Redux } from "./components/state_management/redux"
+import { ReduxFull } from "./components/state_management/redux/redux-full"
+import { ReduxToolkit } from "./components/state_management/redux/redux-toolkit"
 import { ErrorPage } from "./error-page"
+import "./index.css"
 import { PAGES_MaterialUI } from "./pages/component_ui/material_ui"
 import { PAGES_MOBX } from "./pages/state_management/mobx"
 import { PAGES_ReactQuery } from "./pages/state_management/react_query"
@@ -19,8 +20,18 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: `${PATHS.STATE_MANAGEMENT.REDUX}`,
-        element: <INDEX_Redux />
+        path: `${PATHS.STATE_MANAGEMENT.REDUX.INDEX}`,
+        element: <INDEX_Redux />,
+        children: [
+          {
+            path: `${PATHS.STATE_MANAGEMENT.REDUX.FULL}`,
+            element: <ReduxFull />
+          },
+          {
+            path: `${PATHS.STATE_MANAGEMENT.REDUX.TOOLKIT}`,
+            element: <ReduxToolkit />
+          }
+        ]
       },
       {
         path: `${PATHS.STATE_MANAGEMENT.MOBX}`,
