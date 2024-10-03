@@ -6,6 +6,7 @@ export const StyledLink = styled(NavLink)`
   text-decoration: underline;
 
   &.active {
-    color: crimson;
+    color: hsl(348, 83.3%, 47.1%);
+    filter: sepia(18%);
   }
 `

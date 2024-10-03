@@ -2,7 +2,8 @@ import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { INDEX_Redux } from "./components/state_management/redux"
-import { ReduxFull } from "./components/state_management/redux/redux-full"
+import { ReactRedux } from "./components/state_management/redux/react-redux"
+import { ReduxEssenstials } from "./components/state_management/redux/redux-essentials"
 import { ReduxToolkit } from "./components/state_management/redux/redux-toolkit"
 import { ErrorPage } from "./error-page"
 import "./index.css"
@@ -25,11 +26,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: `${PATHS.STATE_MANAGEMENT.REDUX.FULL}`,
-            element: <ReduxFull />
+            element: <ReduxEssenstials />
           },
           {
             path: `${PATHS.STATE_MANAGEMENT.REDUX.TOOLKIT}`,
             element: <ReduxToolkit />
+          },
+          {
+            path: `${PATHS.STATE_MANAGEMENT.REDUX.REACT_REDUX}`,
+            element: <ReactRedux />
           }
         ]
       },

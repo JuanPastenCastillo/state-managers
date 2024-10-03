@@ -21,6 +21,9 @@ const reduxList: ReduxListType = [
   },
   {
     path: PATHS.STATE_MANAGEMENT.REDUX.TOOLKIT
+  },
+  {
+    path: PATHS.STATE_MANAGEMENT.REDUX.REACT_REDUX
   }
 ]
 

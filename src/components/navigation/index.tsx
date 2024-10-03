@@ -2,14 +2,14 @@ import { PATHS } from "@/routes/paths"
 import { NavigationWrapper } from "./styles/NavigationWrapper"
 import { StyledLink } from "./styles/StyledLink"
 
-type StateManagementListType = {
+type GlobalNavigationRoutesType = {
   path: string
   children?: {
     pathChild: string
   }[]
 }[]
 
-const stateManagementList: StateManagementListType = [
+const globalNavigationRoutes: GlobalNavigationRoutesType = [
   {
     path: PATHS.STATE_MANAGEMENT.REDUX.INDEX,
     children: [
@@ -18,6 +18,9 @@ const stateManagementList: StateManagementListType = [
       },
       {
         pathChild: PATHS.STATE_MANAGEMENT.REDUX.TOOLKIT
+      },
+      {
+        pathChild: PATHS.STATE_MANAGEMENT.REDUX.REACT_REDUX
       }
     ]
   },
@@ -33,7 +36,7 @@ export const Navigation = () => {
       <h2>State management</h2>
       <nav>
         <ul>
-          {stateManagementList.map(({ path, children }) => {
+          {globalNavigationRoutes.map(({ path, children }) => {
             if (children) {
               return (
                 <li key={path}>

@@ -1,5 +1,5 @@
-import { INDEX_MobsWrapper } from "./styles/INDEX_MobsWrapper"
+import { Pending } from "@/components/pending"
 
 export const INDEX_Mobs = () => {
-  return <INDEX_MobsWrapper>INDEX_Mobs</INDEX_MobsWrapper>
+  return <Pending />
 }

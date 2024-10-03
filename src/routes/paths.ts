@@ -3,8 +3,9 @@ export const PATHS = {
   STATE_MANAGEMENT: {
     REDUX: {
       INDEX: "redux",
-      FULL: "redux-full",
-      TOOLKIT: "redux-toolkit"
+      FULL: "redux-essentials",
+      TOOLKIT: "redux-toolkit",
+      REACT_REDUX: "react-redux"
     },
     MOBX: "mobx",
     REACT_QUERY: "react-query"

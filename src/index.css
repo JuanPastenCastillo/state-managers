@@ -16,8 +16,7 @@
 }
 
 *:focus-visible {
-  outline: 4px solid #64affb;
-  border-radius: 8px;
+  outline: 4px solid hsl(210.2, 95%, 72.8%);
 }
 
 html,
@@ -47,4 +46,8 @@ h6 {
 
 p {
   text-wrap: pretty;
+}
+
+a {
+  color: cornflowerblue;
 }

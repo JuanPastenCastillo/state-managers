@@ -1,5 +1,5 @@
-import { INDEX_MaterialUIWrapper } from "./styles/INDEX_MaterialUIWrapper"
+import { Pending } from "@/components/pending"
 
 export const INDEX_MaterialUI = () => {
-  return <INDEX_MaterialUIWrapper>INDEX_MaterialUI</INDEX_MaterialUIWrapper>
+  return <Pending />
 }
