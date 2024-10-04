@@ -1,10 +1,10 @@
+import { Counter } from "./counter"
 import { INDEX_ReduxToolkitWrapper } from "./styles/INDEX_ReduxToolkitWrapper"
 
 /* 
 !FH0:
 
-- Make this example: https://redux-toolkit.js.org/tutorials/quick-start
-- Make this other example: https://redux-toolkit.js.org/rtk-query/usage/examples#kitchen-sink
+- 👀Make this other example: https://redux-toolkit.js.org/rtk-query/usage/examples#kitchen-sink
 - Keep doing more examples: https://redux-toolkit.js.org/rtk-query/usage/examples#examples-overview
 
 - https://redux-toolkit.js.org/introduction/getting-started
@@ -26,6 +26,7 @@ export const INDEX_ReduxToolkit = () => {
         rel='noreferrer'>
         https://redux-toolkit.js.org/introduction/getting-started
       </a>
+      <Counter />
     </INDEX_ReduxToolkitWrapper>
   )
 }
