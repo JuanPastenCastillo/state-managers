@@ -1,7 +1,6 @@
 import { StyledLink } from "@/components/navigation/styles/StyledLink"
 import { PATHS } from "@/routes/paths"
-import { useEffect } from "react"
-import { Outlet, useLocation, useNavigate } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import { INDEX_ReduxWrapper } from "./styles/INDEX_ReduxWrapper"
 
 /* 
@@ -17,7 +16,7 @@ type ReduxListType = {
 
 const reduxList: ReduxListType = [
   {
-    path: PATHS.STATE_MANAGEMENT.REDUX.FULL
+    path: PATHS.STATE_MANAGEMENT.REDUX.ESSENTIALS
   },
   {
     path: PATHS.STATE_MANAGEMENT.REDUX.TOOLKIT
@@ -28,14 +27,14 @@ const reduxList: ReduxListType = [
 ]
 
 export const INDEX_Redux = () => {
-  const location = useLocation()
-  const navigate = useNavigate()
+  // const location = useLocation()
+  // const navigate = useNavigate()
 
-  useEffect(() => {
-    if (location.pathname === `/${PATHS.STATE_MANAGEMENT.REDUX.INDEX}`) {
-      navigate(PATHS.STATE_MANAGEMENT.REDUX.FULL)
-    }
-  }, [location, navigate])
+  // useEffect(() => {
+  //   if (location.pathname === `/${PATHS.STATE_MANAGEMENT.REDUX.INDEX}`) {
+  //     navigate(PATHS.STATE_MANAGEMENT.REDUX.ESSENTIALS)
+  //   }
+  // }, [location, navigate])
 
   return (
     <>

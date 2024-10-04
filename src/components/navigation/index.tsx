@@ -14,7 +14,7 @@ const globalNavigationRoutes: GlobalNavigationRoutesType = [
     path: PATHS.STATE_MANAGEMENT.REDUX.INDEX,
     children: [
       {
-        pathChild: PATHS.STATE_MANAGEMENT.REDUX.FULL
+        pathChild: PATHS.STATE_MANAGEMENT.REDUX.ESSENTIALS
       },
       {
         pathChild: PATHS.STATE_MANAGEMENT.REDUX.TOOLKIT

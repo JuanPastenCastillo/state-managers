@@ -3,7 +3,7 @@ export const PATHS = {
   STATE_MANAGEMENT: {
     REDUX: {
       INDEX: "redux",
-      FULL: "redux-essentials",
+      ESSENTIALS: "redux-essentials",
       TOOLKIT: "redux-toolkit",
       REACT_REDUX: "react-redux"
     },

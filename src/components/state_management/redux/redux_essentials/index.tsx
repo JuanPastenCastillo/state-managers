@@ -1,10 +1,10 @@
 import IMGOneWayDataFlow from "@/assets/redux/redux-essentials/one-way-data-flow.png"
 import { CodeHighlighted } from "@/components/code_highlight"
-import { ReduxEssenstialsWrapper } from "./styles/ReduxEssenstialsWrapper"
+import { INDEX_ReduxEssenstialsWrapper } from "./styles/ReduxEssenstialsWrapper"
 
-export const ReduxEssenstials = () => {
+export const INDEX_ReduxEssenstials = () => {
   return (
-    <ReduxEssenstialsWrapper>
+    <INDEX_ReduxEssenstialsWrapper>
       <h1>Redux Essenstials from:</h1>
       <a
         href='https://redux.js.org/tutorials/essentials/part-1-overview-concepts'
@@ -284,6 +284,6 @@ export const ReduxEssenstials = () => {
           </li>
         </ul>
       </section>
-    </ReduxEssenstialsWrapper>
+    </INDEX_ReduxEssenstialsWrapper>
   )
 }

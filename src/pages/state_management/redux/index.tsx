@@ -1,3 +1,5 @@
-export const PAGES_Redux = () => {
-  return <div>PAGES_Redux</div>
+import { INDEX_Redux } from "@/components/state_management/redux"
+
+export default function PAGES_Redux() {
+  return <INDEX_Redux />
 }

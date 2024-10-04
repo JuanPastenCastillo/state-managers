@@ -22,7 +22,7 @@ export const CodeHighlighted = ({ code }: { code: string }) => {
 }
 
 function removeLeftIndentation(codeBlock: string): string {
-  // Split the code into lines
+  // Split the code into lines and remove the first line
   const lines = codeBlock.split("\n").slice(1)
 
   // Find the minimum indentation level

@@ -1,13 +1,13 @@
-import { ReactReduxWrapper } from "./styles/ReactReduxWrapper"
+import { INDEX_ReactReduxWrapper } from "./styles/INDEX_ReactReduxWrapper"
 
 /* 
 
 make this example: https://react-redux.js.org/tutorials/quick-start#full-counter-app-example
 */
 
-export const ReactRedux = () => {
+export const INDEX_ReactRedux = () => {
   return (
-    <ReactReduxWrapper>
+    <INDEX_ReactReduxWrapper>
       <h1>React-Redux from:</h1>
       <a
         href='https://react-redux.js.org/introduction/getting-started'
@@ -15,6 +15,6 @@ export const ReactRedux = () => {
         rel='noreferrer'>
         https://react-redux.js.org/introduction/getting-started
       </a>
-    </ReactReduxWrapper>
+    </INDEX_ReactReduxWrapper>
   )
 }

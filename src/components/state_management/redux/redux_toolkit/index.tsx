@@ -1,7 +1,7 @@
-import { ReduxToolkitWrapper } from "./styles/ReduxToolkitWrapper"
+import { INDEX_ReduxToolkitWrapper } from "./styles/INDEX_ReduxToolkitWrapper"
 
 /* 
-Order:
+!FH0:
 
 - Make this example: https://redux-toolkit.js.org/tutorials/quick-start
 - Make this other example: https://redux-toolkit.js.org/rtk-query/usage/examples#kitchen-sink
@@ -16,9 +16,9 @@ Order:
 - https://redux-toolkit.js.org/rtk-query/comparison
 */
 
-export const ReduxToolkit = () => {
+export const INDEX_ReduxToolkit = () => {
   return (
-    <ReduxToolkitWrapper>
+    <INDEX_ReduxToolkitWrapper>
       <h1>Redux-Toolkit from:</h1>
       <a
         href='https://redux-toolkit.js.org/introduction/getting-started'
@@ -26,6 +26,6 @@ export const ReduxToolkit = () => {
         rel='noreferrer'>
         https://redux-toolkit.js.org/introduction/getting-started
       </a>
-    </ReduxToolkitWrapper>
+    </INDEX_ReduxToolkitWrapper>
   )
 }
