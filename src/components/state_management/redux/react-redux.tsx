@@ -1,5 +1,10 @@
 import { ReactReduxWrapper } from "./styles/ReactReduxWrapper"
 
+/* 
+
+make this example: https://react-redux.js.org/tutorials/quick-start#full-counter-app-example
+*/
+
 export const ReactRedux = () => {
   return (
     <ReactReduxWrapper>

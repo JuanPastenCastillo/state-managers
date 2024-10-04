@@ -1,18 +1,18 @@
 :root {
   color: rgba(255, 255, 255, 0.87);
   background-color: hsl(0, 0%, 14.1%);
+  /* --code-bg-color: hsl(0, 0%, 32%); */
+  --code-bg-color: hsl(0, 0%, 32%);
 }
 
 * {
   min-width: 0;
-  font: inherit;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
 }
 
 *:focus-visible {
@@ -50,4 +50,10 @@ p {
 
 a {
   color: cornflowerblue;
+}
+
+:not(pre) > code {
+  background-color: var(--code-bg-color);
+  padding: 2px 4px;
+  border-radius: 2px;
 }
