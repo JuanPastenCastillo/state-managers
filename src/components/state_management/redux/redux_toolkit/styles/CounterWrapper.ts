@@ -1,17 +1,10 @@
 import styled from "styled-components"
 
 export const CounterWrapper = styled.div`
-  border: 2px solid crimson;
-
   display: grid;
+  gap: 24px;
 
-  & > span {
-    margin-right: auto;
-    font-size: calc(8px * 6);
-    color: coral;
-  }
-
-  button {
-    width: fit-content;
-  }
+  border: 1px solid gray;
+  padding: 8px;
+  border-radius: 8px;
 `
