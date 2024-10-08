@@ -2,12 +2,8 @@ import { Counter } from "./counter"
 import { INDEX_ReduxToolkitWrapper } from "./styles/INDEX_ReduxToolkitWrapper"
 
 /* 
-!FH0:
+!FH1:
 
-- 👀Make this other example: https://redux-toolkit.js.org/rtk-query/usage/examples#kitchen-sink
-- Keep doing more examples: https://redux-toolkit.js.org/rtk-query/usage/examples#examples-overview
-
-- https://redux-toolkit.js.org/introduction/getting-started
 - https://redux-toolkit.js.org/introduction/why-rtk-is-redux-today
 
 - https://redux-toolkit.js.org/tutorials/overview

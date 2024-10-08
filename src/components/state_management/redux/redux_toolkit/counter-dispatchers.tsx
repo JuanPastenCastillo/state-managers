@@ -5,7 +5,7 @@ import {
   decrementByAmount,
   increment,
   incrementByAmount
-} from "@/features/counter/redux_toolkit/counter-slice"
+} from "@/state_managers/redux/redux_toolkit/features/counter/counter-slice"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 

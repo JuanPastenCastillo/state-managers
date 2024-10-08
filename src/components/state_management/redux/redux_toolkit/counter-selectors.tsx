@@ -1,6 +1,6 @@
 import { CounterSelectorsWrapper } from "./styles/CounterSelectorsWrapper"
 
-import { selectCount } from "@/features/counter/redux_toolkit/counter-slice"
+import { selectCount } from "@/state_managers/redux/redux_toolkit/features/counter/counter-slice"
 import { useSelector } from "react-redux"
 
 export const CounterSelectors = () => {
