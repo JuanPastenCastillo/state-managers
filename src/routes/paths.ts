@@ -1,12 +1,11 @@
 export const PATHS = {
   HOME: "/",
   STATE_MANAGEMENT: {
-    REDUX: {
-      INDEX: "redux",
-      ESSENTIALS: "redux-essentials",
-      TOOLKIT: "redux-toolkit",
-      REACT_REDUX: "react-redux"
-    },
+    INDEX: "state_management",
+    ESSENTIALS: "redux-essentials",
+    TOOLKIT: "redux-toolkit",
+    RTK_QUERY: "rtk-query",
+    REACT_REDUX: "react-redux",
     MOBX: "mobx",
     REACT_QUERY: "react-query"
   },

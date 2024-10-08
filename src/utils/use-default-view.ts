@@ -2,6 +2,11 @@ import { PATHS } from "@/routes/paths"
 import { useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 
+/* 
+use-default-view
+
+ */
+
 export const useDefaultView = (): void => {
   const location = useLocation()
   const navigate = useNavigate()
@@ -9,7 +14,7 @@ export const useDefaultView = (): void => {
   useEffect(() => {
     if (location.pathname === `${PATHS.HOME}`) {
       navigate(
-        `/${PATHS.STATE_MANAGEMENT.REDUX.INDEX}/${PATHS.STATE_MANAGEMENT.REDUX.ESSENTIALS}`
+        `/${PATHS.STATE_MANAGEMENT.INDEX}/${PATHS.STATE_MANAGEMENT.ESSENTIALS}`
       )
     }
   }, [location, navigate])

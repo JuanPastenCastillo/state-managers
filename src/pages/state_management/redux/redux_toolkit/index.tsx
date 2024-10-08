@@ -1,8 +1,5 @@
 import { INDEX_ReduxToolkit } from "@/components/state_management/redux/redux_toolkit"
 
-/* 
-!FH0
-*/
 import { storeReduxToolkit } from "@/state_managers/redux/redux_toolkit/store/store"
 import { Provider } from "react-redux"
 

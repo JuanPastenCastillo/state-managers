@@ -1,4 +1,4 @@
-import { useDefaultView } from "@/utils/useDefaultView"
+import { useDefaultView } from "@/utils/use-default-view"
 import { Outlet } from "react-router-dom"
 import { Footer } from "../footer"
 import { Navigation } from "../navigation"
