@@ -8,7 +8,7 @@ type Route = {
 }
 
 // Recursive component to render routes
-export const NavigationRenderer: FC<{
+export const NavigationRender: FC<{
   routes: Route[]
   theFather?: string
 }> = ({ routes, theFather }) => {
@@ -22,7 +22,7 @@ export const NavigationRenderer: FC<{
               <li key={`${route.path}_${index}`}>
                 <h2>{route.path}</h2>
                 {route.children && route.children.length > 0 && (
-                  <NavigationRenderer
+                  <NavigationRender
                     routes={route.children}
                     theFather={route.path}
                   />

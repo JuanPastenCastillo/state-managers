@@ -14,10 +14,6 @@ export const ErrorPage = () => {
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
         <i>
-          {/* {errorIsKnowed
-            ? error.statusText || error.message
-            : `Unknown error ocurred`} */}
-
           <i>{error.statusText || error.message}</i>
         </i>
       </p>

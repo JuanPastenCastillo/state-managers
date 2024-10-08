@@ -1,11 +1,14 @@
 type PathObject = { [key: string]: string | PathObject }
 
+type Route = {
+  path: string
+  children?: Route[]
+}
+
 const notAccepted = ["index", "home"]
 
-export const flatRoutes = (
-  paths: PathObject
-): { path: string; children?: { path: string }[] }[] => {
-  const routes = []
+export const flatRoutes = (paths: PathObject): Route[] => {
+  const routes: Route[] = []
 
   for (const key in paths) {
     const value = paths[key]
