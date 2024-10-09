@@ -1,18 +1,23 @@
 import { CounterSelectorsWrapper } from "./styles/CounterSelectorsWrapper"
 
-import { selectCount } from "@/state_managers/redux/redux_toolkit/features/counter/counter-slice"
-import { useSelector } from "react-redux"
+import { CounterSelectorsState1 } from "./counter-selectors-state1"
+import { CounterSelectorsState2 } from "./counter-selectors-state2"
 
+/* 
+CounterSelectorsState1
+CounterSelectorsState2
+
+
+*/
 export const CounterSelectors = () => {
-  const { counter, lastAction } = useSelector(selectCount)
-
   return (
     <CounterSelectorsWrapper>
       <legend>
         <span>{CounterSelectors.name}</span> component
       </legend>
-      <p>Last action used: {lastAction} </p>
-      <span>{counter}</span>
+
+      <CounterSelectorsState1 />
+      <CounterSelectorsState2 />
     </CounterSelectorsWrapper>
   )
 }
