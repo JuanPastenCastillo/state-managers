@@ -10,7 +10,9 @@ import { INDEX_RtxQueryWrapper } from "./styles/INDEX_RtxQueryWrapper"
 */
 
 export const INDEX_RtxQuery = () => {
-  const [selectedPokemon, setSelectPokemon] = useState<any>(undefined)
+  const [selectedPokemon, setSelectPokemon] = useState<string | undefined>(
+    undefined
+  )
 
   return (
     <INDEX_RtxQueryWrapper>
@@ -18,7 +20,7 @@ export const INDEX_RtxQuery = () => {
 
       {selectedPokemon ? (
         <>
-          <PokemonDetails />
+          <PokemonDetails selectedPokemon={selectedPokemon} />
           <button onClick={() => setSelectPokemon(undefined)}>back</button>
         </>
       ) : (

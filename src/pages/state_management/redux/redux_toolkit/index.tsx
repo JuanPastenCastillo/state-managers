@@ -1,6 +1,5 @@
 import { INDEX_ReduxToolkit } from "@/components/state_management/redux/redux_toolkit"
-
-import { storeReduxToolkit } from "@/state_managers/redux/redux_toolkit/store/store"
+import { storeReduxToolkit } from "@/state_managers/redux/redux_toolkit/store/store-redux-toolkit"
 import { Provider } from "react-redux"
 
 export default function PAGES_ReduxToolkit() {

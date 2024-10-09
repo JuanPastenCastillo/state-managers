@@ -1,61 +1,66 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
-const fakePokemonListing = {
-  count: 1126,
-  next: "https://pokeapi.co/api/v2/pokemon?offset=9&limit=9",
-  previous: null,
-  results: [
-    { name: "bulbasaur", url: "https://pokeapi.co/api/v2/pokemon/1/" },
-    { name: "ivysaur", url: "https://pokeapi.co/api/v2/pokemon/2/" },
-    { name: "venusaur", url: "https://pokeapi.co/api/v2/pokemon/3/" },
-    { name: "charmander", url: "https://pokeapi.co/api/v2/pokemon/4/" },
-    { name: "charmeleon", url: "https://pokeapi.co/api/v2/pokemon/5/" },
-    { name: "charizard", url: "https://pokeapi.co/api/v2/pokemon/6/" },
-    { name: "squirtle", url: "https://pokeapi.co/api/v2/pokemon/7/" },
-    { name: "wartortle", url: "https://pokeapi.co/api/v2/pokemon/8/" },
-    { name: "blastoise", url: "https://pokeapi.co/api/v2/pokemon/9/" }
-  ]
+interface PokemonListing {
+  count: number
+  results: Array<{
+    name: string
+    url: string
+  }>
 }
 
-const fakePokemonDetailData = {
-  id: 1,
-  name: "bulbasaur",
-  height: 7,
-  weight: 69,
-  types: [
-    {
-      slot: 1,
-      type: { name: "grass", url: "https://pokeapi.co/api/v2/type/12/" }
-    },
-    {
-      slot: 2,
-      type: { name: "poison", url: "https://pokeapi.co/api/v2/type/4/" }
+interface PokemonDetailData {
+  id: number
+  name: string
+  height: number
+  weight: number
+  types: Array<{
+    slot: number
+    type: {
+      name: string
+      url: string
     }
-  ],
+  }>
   sprites: {
-    front_default:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+    front_default: string
   }
 }
 
-function simulateLoading() {
-  return new Promise((resolve) => setTimeout(resolve, 500))
+const baseQueryWithErrorHandling = async (
+  args: any,
+  api: any,
+  extraOptions: any
+) => {
+  const result = await fetchBaseQuery({
+    baseUrl: "https://pokeapi.co/api/v2/"
+  })(args, api, extraOptions)
+
+  if (result.error) {
+    // You can log or manipulate the error here if needed
+    const errorData = result.error.data || { message: "An error occurred" }
+    return { error: { status: result.error.status, data: errorData } }
+  }
+
+  return result
 }
 
 export const apiPokemon = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "" }),
+  baseQuery: baseQueryWithErrorHandling,
+
   endpoints: (build) => ({
-    pokemonList: build.query({
-      async queryFn() {
-        await simulateLoading()
-        return { data: fakePokemonListing } // Ensure `data` is returned
+    pokemonList: build.query<PokemonListing, void>({
+      query() {
+        return {
+          url: "pokemon",
+          params: {
+            limit: 9
+          },
+          method: "GET",
+          headers: {}
+        }
       }
     }),
-    pokemonDetail: build.query({
-      async queryFn() {
-        await simulateLoading()
-        return { data: fakePokemonDetailData } // Ensure `data` is returned
-      }
+    pokemonDetail: build.query<PokemonDetailData, { name: string }>({
+      query: ({ name }) => `pokemon/${name}`
     })
   })
 })

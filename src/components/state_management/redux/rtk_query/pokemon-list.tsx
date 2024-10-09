@@ -3,11 +3,11 @@ import { usePokemonListQuery } from "@/state_managers/redux/redux_toolkit/api/ap
 export const PokemonList = ({
   onPokemonSelected
 }: {
-  onPokemonSelected: any
+  onPokemonSelected: (name: string) => void
 }) => {
-  const { isLoading, isError, isSuccess, data } = usePokemonListQuery()
+  const { isLoading, isError, data, isUninitialized } = usePokemonListQuery()
 
-  if (isLoading) {
+  if (isUninitialized || isLoading) {
     return <p>loading, please wait</p>
   }
 
@@ -15,18 +15,16 @@ export const PokemonList = ({
     return <p>something went wrong</p>
   }
 
-  if (isSuccess) {
-    return (
-      <article>
-        <h2>Overview</h2>
-        <ol start={1}>
-          {data.results.map(({ name }: { name: string }) => (
-            <li key={name}>
-              <button onClick={() => onPokemonSelected(name)}>{name}</button>
-            </li>
-          ))}
-        </ol>
-      </article>
-    )
-  }
+  return (
+    <article>
+      <h2>Overview</h2>
+      <ol start={1}>
+        {data.results.map(({ name }: { name: string }) => (
+          <li key={name}>
+            <button onClick={() => onPokemonSelected(name)}>{name}</button>
+          </li>
+        ))}
+      </ol>
+    </article>
+  )
 }

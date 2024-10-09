@@ -5,10 +5,16 @@ const listFormatter = new Intl.ListFormat("en", {
   type: "conjunction"
 })
 
-export const PokemonDetails = () => {
-  const { isLoading, isError, isSuccess, data } = usePokemonDetailQuery()
+export const PokemonDetails = ({
+  selectedPokemon
+}: {
+  selectedPokemon: string
+}) => {
+  const { isLoading, isError, isUninitialized, data } = usePokemonDetailQuery({
+    name: selectedPokemon
+  })
 
-  if (isLoading) {
+  if (isUninitialized || isLoading) {
     return <p>loading, please wait</p>
   }
 
@@ -16,26 +22,22 @@ export const PokemonDetails = () => {
     return <p>something went wrong</p>
   }
 
-  if (isSuccess) {
-    return (
-      <article>
-        <h2>{data.name}</h2>
-        <img
-          src={data.sprites.front_default}
-          alt={data.name}
-        />
-        <ul>
-          <li>id: {data.id}</li>
-          <li>height: {data.height}</li>
-          <li>weight: {data.weight}</li>
-          <li>
-            types:
-            {listFormatter.format(
-              data.types.map((item: any) => item.type.name)
-            )}
-          </li>
-        </ul>
-      </article>
-    )
-  }
+  return (
+    <article>
+      <h2>{data.name}</h2>
+      <img
+        src={data.sprites.front_default}
+        alt={data.name}
+      />
+      <ul>
+        <li>id: {data.id}</li>
+        <li>height: {data.height}</li>
+        <li>weight: {data.weight}</li>
+        <li>
+          types:
+          {listFormatter.format(data.types.map((item) => item.type.name))}
+        </li>
+      </ul>
+    </article>
+  )
 }
