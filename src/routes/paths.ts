@@ -5,7 +5,6 @@ export const PATHS = {
     ESSENTIALS: "redux-essentials",
     TOOLKIT: "redux-toolkit",
     RTK_QUERY: "rtk-query",
-    REACT_REDUX: "react-redux",
     MOBX: "mobx",
     REACT_QUERY: "react-query"
   },

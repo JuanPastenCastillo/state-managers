@@ -4,7 +4,6 @@ import { PAGES_MaterialUI } from "@/pages/component_ui/material_ui"
 import PAGES_StateManagement from "@/pages/state_management"
 import { PAGES_MOBX } from "@/pages/state_management/mobx"
 import { PAGES_ReactQuery } from "@/pages/state_management/react_query"
-import PAGES_ReactRedux from "@/pages/state_management/redux/react_redux"
 import PAGES_ReduxEssenstials from "@/pages/state_management/redux/redux_essentials"
 import PAGES_ReduxToolkit from "@/pages/state_management/redux/redux_toolkit"
 import PAGES_RtkQuery from "@/pages/state_management/redux/rtk_query"
@@ -33,10 +32,6 @@ export const router = createBrowserRouter([
           {
             path: `${PATHS.STATE_MANAGEMENT.RTK_QUERY}`,
             element: <PAGES_RtkQuery />
-          },
-          {
-            path: `${PATHS.STATE_MANAGEMENT.REACT_REDUX}`,
-            element: <PAGES_ReactRedux />
           },
           {
             path: `${PATHS.STATE_MANAGEMENT.MOBX}`,
