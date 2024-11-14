@@ -1,5 +1,5 @@
-import { INDEX_Mobs } from "@/components/state_management/mobx"
+import { INDEX_Mobx } from "@/components/state_management/mobx"
 
 export const PAGES_MOBX = () => {
-  return <INDEX_Mobs />
+  return <INDEX_Mobx />
 }
