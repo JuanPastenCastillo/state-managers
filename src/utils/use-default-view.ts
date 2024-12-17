@@ -2,11 +2,6 @@ import { PATHS } from "@/routes/paths"
 import { useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 
-/* 
-use-default-view
-
- */
-
 export const useDefaultView = (): void => {
   const location = useLocation()
   const navigate = useNavigate()
