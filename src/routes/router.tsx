@@ -7,6 +7,7 @@ import { PAGES_ReactQuery } from "@/pages/state_management/react_query"
 import PAGES_ReduxEssenstials from "@/pages/state_management/redux/redux_essentials"
 import PAGES_ReduxToolkit from "@/pages/state_management/redux/redux_toolkit"
 import PAGES_RtkQuery from "@/pages/state_management/redux/rtk_query"
+import { PAGES_Zustand } from "@/pages/state_management/zustand"
 import { createBrowserRouter } from "react-router-dom"
 import { PATHS } from "./paths"
 
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
           {
             path: `${PATHS.STATE_MANAGEMENT.REACT_QUERY}`,
             element: <PAGES_ReactQuery />
+          },
+          {
+            path: `${PATHS.STATE_MANAGEMENT.ZUSTAND}`,
+            element: <PAGES_Zustand />
           }
         ]
       },
