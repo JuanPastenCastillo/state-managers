@@ -2,6 +2,7 @@ import { INDEX_Root } from "@/components/layout"
 import { ErrorPage } from "@/error-page"
 import { PAGES_MaterialUI } from "@/pages/component_ui/material_ui"
 import PAGES_StateManagement from "@/pages/state_management"
+import PAGES_Jotai from "@/pages/state_management/jotai"
 import { PAGES_MOBX } from "@/pages/state_management/mobx"
 import { PAGES_ReactQuery } from "@/pages/state_management/react_query"
 import PAGES_ReduxEssenstials from "@/pages/state_management/redux/redux_essentials"
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
           {
             path: `${PATHS.STATE_MANAGEMENT.ZUSTAND}`,
             element: <PAGES_Zustand />
+          },
+          {
+            path: `${PATHS.STATE_MANAGEMENT.JOTAI}`,
+            element: <PAGES_Jotai />
           }
         ]
       },
